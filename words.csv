@@ -1,0 +1,149 @@
+﻿ArticleID,SentenceID,WordCount,OriginalText
+1,t.01.01,7,Could humans live on Mars some day?
+1,t.01.02,10,Scientists ask this question because Earth and Mars are similar.
+1,t.01.03,11,"Similar to Earth day, Mars day is about 24 hours long."
+1,t.01.04,11,"Also, both planets are near the Sun in our solar system."
+1,t.01.05,13,Earth is the 3rd planet and Mars the 4th planet from the Sun.
+1,t.01.06,11,Mars also has an axial tilt similar to Earth axial tilt.
+1,t.01.07,10,An axial tilt gives both planets seasons with temperature changes.
+1,t.01.08,10,"Just like Earth, Mars has cold winters and warmer summers."
+1,t.01.09,10,"Like Earth, Mars has winds, weather, dust storms, and volcanoes."
+1,t.01.10,9,"But in some ways, Earth and Mars are different."
+1,t.01.11,9,"Differences include temperature, length of a year, and gravity."
+1,t.01.12,15,"The average temperature is -81 deg F on Mars, but 57 deg F on Earth."
+1,t.01.13,12,A Martian year is almost twice as long as an Earth year.
+1,t.01.14,10,Earth gravity is almost 3 times stronger than Martian gravity.
+1,t.01.15,11,"Given the similarities, can humans go to Mars and live there?"
+1,t.01.16,7,NASA scientists want to answer this question.
+1,t.01.17,7,NASA oversees U.S. research on space exploration.
+1,t.01.18,9,NASA scientists send devices called spacecraft to explore Mars.
+1,t.01.19,10,The spacecraft carry rovers that can rove or move around.
+1,t.01.20,9,These wheeled rovers can explore characteristics of the planet.
+1,t.01.21,10,They can also show land characteristics and weather on Mars
+1,t.01.22,8,One of these NASA rovers is named Curiosity.
+1,t.01.23,10,Curiosity found evidence that soil on Mars contains 2% water.
+1,t.01.24,9,NASA has planned a new mission called Mars 2020.
+1,t.01.25,11,This mission will use a new car-sized rover to examine Mars.
+1,t.01.26,10,The new rover will contain additional instruments to study Mars.
+1,t.01.27,10,"For example, one instrument will take images beneath Mars surface."
+1,t.01.28,10,Another instrument will attempt to make oxygen from carbon dioxide.
+1,t.01.29,8,Mars 2020 will help scientists answer important questions.
+1,t.01.30,10,It will explore whether there has been life on Mars.
+1,t.01.31,13,It will also answer whether humans can live on Mars in the future.
+2,t.02.01,10,How can engineers help prevent spills of oil from supertankers?
+2,t.02.02,10,Supertankers are huge ships that carry oil over the oceans.
+2,t.02.03,10,A supertanker can contain about a half-million tons of oil.
+2,t.02.04,10,A supertanker is the size of about five football fields.
+2,t.02.05,10,A supertanker cargo area could hold the Empire State Building.
+2,t.02.06,10,Most of the world oil is transported by these supertankers.
+2,t.02.07,10,Disasters occur when wrecked supertankers spill oil into the ocean.
+2,t.02.08,11,"As a result of these oil spills, the environment is damaged."
+2,t.02.09,10,"In 1967, a supertanker crashed near the shores of England."
+2,t.02.10,9,"This crash resulted in washing ashore 200,000 dead seabirds."
+2,t.02.11,9,"In 1989, another supertanker spilled oil into Alaska coast."
+2,t.02.12,12,"The spilled 11 million gallons of oil caused 1,000 otters to die."
+2,t.02.13,9,Oil spills from supertankers also kill drifting microscopic plants.
+2,t.02.14,12,"These plants provide food for sea life, such as whales and shrimp."
+2,t.02.15,11,The plants also produce 70 percent of the world oxygen supply.
+2,t.02.16,8,Oil spills result partly from limitations in engineering.
+2,t.02.17,8,Supertankers lack double bottom hulls for extra protection.
+2,t.02.18,9,Supertankers lack extra power and steering equipment for safety.
+2,t.02.19,11,Supertankers also have only one boiler to provide the ship power.
+2,t.02.20,10,Supertankers have only one propeller to steer the huge ship.
+2,t.02.21,9,Lack of such backup components causes problems during emergencies.
+2,t.02.22,9,Emergencies for supertankers are ocean storms and coastal reefs.
+2,t.02.23,8,Solutions to problems with supertankers include three tactics.
+2,t.02.24,10,"Supertankers must be built with added hulls, boilers, and propellers."
+2,t.02.25,9,"These provide extra safety, control, and backup in emergencies."
+2,t.02.26,11,"Also, officers need top training to run and maneuver their ships."
+2,t.02.27,8,Supertanker simulators at some facilities provide top training.
+2,t.02.28,10,"Finally, ground control stations should be installed near the shore."
+2,t.02.29,9,Ground control stations would act like airplane control towers.
+2,t.02.30,10,They would guide supertankers safely on the oceans along coasts.
+2,t.02.31,10,This ensures safety in shipping lanes and along dangerous coasts.
+3,t.03.01,8,Two important math concepts are combinations and permutations.
+3,t.03.02,8,Combinations and permutations are similar in several ways.
+3,t.03.03,13,Both refer to sets of objects that you pick and arrange in order.
+3,t.03.04,13,"A set could be the numbers 1 through 9, or available pizza toppings."
+3,t.03.05,10,"For combinations and permutations, items are selected from a set."
+3,t.03.06,14,"For example, we can select 1-3 from the set 1-9 to count and order."
+3,t.03.07,7,"However, combinations and permutations are calculated differently."
+3,t.03.08,11,"When we compute a combination, the item order does not matter."
+3,t.03.09,16,"A combination of 1, 2, 3 is the same as the combination of 3, 2, 1."
+3,t.03.10,9,Another example of a combination is picking pizza toppings.
+3,t.03.11,9,"Suppose you pick three toppings: cheese, pepperoni, and sausage."
+3,t.03.12,11,"You can also say that you pick sausage, pepperoni, and cheese."
+3,t.03.13,12,Here you have a combination of three things in two different orders.
+3,t.03.14,13,But the pizzas you get are the same because the order does matter.
+3,t.03.15,9,"However, order does matter when we compute a permutation."
+3,t.03.16,13,"1,2,3 and 3,2, 1 are different permutations of these three numbers."
+3,t.03.17,9,In permutations different orders of items have different meanings.
+3,t.03.18,12,"Imagine you can pick only one for lunch: pizza, pasta, or rice."
+3,t.03.19,12,You say pizza is your favorite and rice is your least favorite.
+3,t.03.20,13,"So your order of preference is: 1) pizza, 2) pasta, and 3) rice."
+3,t.03.21,13,"If pizza runs out, the waiter will give you pasta and not rice."
+3,t.03.22,10,But your friend may have a different order of preference.
+3,t.03.23,12,"Your friend order could be: 1) rice, 2) pasta, and 3) pizza."
+3,t.03.24,11,So two orders of the same items mean something quite different.
+3,t.03.25,11,Permutation allows us to count all the possible orders of items.
+3,t.03.26,9,"Given three numbers 1,2,3, we can derive 6 permutations."
+3,t.03.27,13,"These include 1,2,3 / 1,3,2 / 2,1,3 / 2,3,1 / 3,1,2 / 3,2,1."
+3,t.03.28,8,These sequences in different orders are different permutations.
+4,t.04.01,11,Global Positioning System (GPS) is a system that helps us navigate.
+4,t.04.02,11,GPS is a system of 24 or more satellites in space.
+4,t.04.03,10,"These satellites orbit at about 12,000 miles above the Earth."
+4,t.04.04,8,Different satellites orbit the Earth in different locations.
+4,t.04.05,10,They circle the Earth along 1 of 6 orbits continuously.
+4,t.04.06,9,They send information to a GPS receiver on Earth.
+4,t.04.07,9,The information is transmitted across space via radio signals.
+4,t.04.08,11,Radio signals travel through space like sound waves through a canyon.
+4,t.04.09,12,Imagine you and your friend are at different sides of a canyon.
+4,t.04.10,13,You shout to your friend and she hears you after a short delay.
+4,t.04.11,14,This delay is the time that sound waves need to reach the other side.
+4,t.04.12,12,"Similarly, the satellite in space sends a radio signal at one time."
+4,t.04.13,13,After a delay the radio signal arrives at the GPS receiver on Earth.
+4,t.04.14,11,The receiver records the precise time when the radio signal arrives.
+4,t.04.15,9,It then calculates the difference between these two times.
+4,t.04.16,11,This time difference is the travel time of the radio signal.
+4,t.04.17,14,The GPS uses this travel time to figure out how far the satellite is.
+4,t.04.18,13,It uses the formula “distance = time (T) x rate of transmission (C)”.
+4,t.04.19,9,T is the travel time of the radio signal.
+4,t.04.20,12,"C is the speed of light, more than 186,000 miles per second."
+4,t.04.21,12,T x C calculates the distance between the receiver and each satellite.
+4,t.04.22,8,Different satellites have different distances from the receiver.
+4,t.04.23,10,This information helps the receiver determine its location on Earth.
+4,t.04.24,10,The precise location is calculated based on geometry of distances.
+4,t.04.25,13,A GPS device that you carry in your car is a small receiver.
+4,t.04.26,11,Radio signals from the satellites are updated as the device moves.
+4,t.04.27,11,At least 4 satellites are involved to pinpoint the device location.
+4,t.04.28,10,GPS devices provide maps and directions that help people travel.
+5,t.05.01,9,Engineers design electrical circuits to power homes and buildings.
+5,t.05.02,9,Electrical circuits are closed paths that electricity flows through.
+5,t.05.03,12,This means that the entire path must be connected like a loop.
+5,t.05.04,13,Imagine a simple circuit made with a battery and a piece of wire.
+5,t.05.05,13,Now connect each end of the wire to different ends of the battery.
+5,t.05.06,13,Your piece of wire and battery now make a circle or circular path.
+5,t.05.07,12,One end of the battery is positive and the other end negative.
+5,t.05.08,9,Electrons will flow across this circuit through the wire.
+5,t.05.09,8,You have just created a simple electrical circuit.
+5,t.05.10,12,Removing the wire from the battery will stop the flow of electrons.
+5,t.05.11,12,Now imagine that you want to connect the battery to a lightbulb.
+5,t.05.12,12,First the wire is cut in the middle and breaks the circuit.
+5,t.05.13,9,Then a lightbulb is inserted to reconnect the circuit.
+5,t.05.14,10,The electrical circuit is complete again and electrons are flowing.
+5,t.05.15,9,"Electricity now flows through the lightbulb, lighting it up."
+5,t.05.16,11,"If the circuit is now broken, the lightbulb will go out."
+5,t.05.17,15,You can also add a switch in the circuit to break it or connect it.
+5,t.05.18,11,This allows you to turn on or turn off the lightbulb.
+5,t.05.19,7,A simple electrical circuit contains several parts.
+5,t.05.20,9,"These include a source, a path, and a resistor."
+5,t.05.21,9,The source provides the energy to an electrical circuit.
+5,t.05.22,9,"In our example above, the source is the battery."
+5,t.05.23,10,"Batteries can differ in voltage, the electric potential or force."
+5,t.05.24,13,The path is the closed loop with wires that connect to the source.
+5,t.05.25,8,Electrons flow through the path as electric currents.
+5,t.05.26,6,Electric currents increase with increased voltage.
+5,t.05.27,10,The resistor is any device that reduces the electric current.
+5,t.05.28,9,It creates resistance or impedance in the electrical circuit.
+5,t.05.29,9,"In our example above, the resistor is the lightbulb."
+5,t.05.30,6,Electric currents decrease with increased resistance.
