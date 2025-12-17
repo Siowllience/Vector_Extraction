@@ -49,7 +49,7 @@ docker pull nipreps/fmriprep:25.0.0
 docker load -i fmriprep_25.0.0.tar
 ```
 
-确认docker无误后即可利用fMRIPrep工具处理原始fMRIPrep：
+确认docker无误后即可利用fMRIPrep工具处理原始fMRI数据：
 ```python
 docker run --rm -it \
   -v /data/home/jinyuehan/LLMBrain/11.25/reading_brain_datalad/ds003974:/data/input:ro \
