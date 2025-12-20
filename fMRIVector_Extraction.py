@@ -15,15 +15,16 @@ pd.options.mode.chained_assignment = None
 
 # ===================== 配置参数 =====================
 # 基础路径配置（移除group层级）
-EVENTS_BASE_DIR = '/data/home/jinyuehan/LLMBrain/11.25/reading_brain_datalad/ds003974'
-WORDS_BASE_DIR = '/data/home/jinyuehan/LLMBrain/12.03'
-GII_BASE_DIR = '/data/home/jinyuehan/LLMBrain/12.11/fmriprep'
-SAVE_DIR = '/data/home/jinyuehan/LLMBrain/12.11/fmri_vector'
+EVENTS_BASE_DIR = '/data/home/jinyuehan/LLMBrain/11.25/reading_brain_datalad/ds003974'  #原始数据集路径。
+WORDS_BASE_DIR = ''                                                                     #words.csv路径。
+GII_BASE_DIR = 'fmriprep'                                                               #处理好的fMRI数据集路径
+SAVE_DIR = 'fmriVector'                                                                 #输出路径
 
 # 默认参数（保留group但无实际作用）
-DEFAULT_SUBJ = 'sub-20'    
-DEFAULT_GROUP = 'adult'    # 仅保留参数，路径中不再使用
-DEFAULT_HEM = 'L'          
+DEFAULT_SUBJ = 'sub-01'    #受试者编号
+DEFAULT_GROUP = 'adult'    #路径中不再使用，可忽略
+DEFAULT_HEM = 'L'          #L代表左半脑，R代表右半脑
+
 # ✅ 新增：批量处理的受试者范围（可自定义，示例为sub-01到sub-50）
 SUBJ_RANGE = range(1, 51)  # range(1,51) 对应sub-01到sub-51
 
