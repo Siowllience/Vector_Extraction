@@ -15,15 +15,17 @@ pd.options.mode.chained_assignment = None
 
 # ===================== 配置参数 =====================
 # 基础路径配置（移除group层级）
-EVENTS_BASE_DIR = '/data/home/jinyuehan/LLMBrain/11.25/reading_brain_datalad/ds003974'  #原始数据集路径。
-WORDS_BASE_DIR = ''                                                                     #words.csv路径。
-GII_BASE_DIR = 'fmriprep'                                                               #处理好的fMRI数据集路径
-SAVE_DIR = 'fmriVector'                                                                 #输出路径
+EVENTS_BASE_DIR = '/data/home/jinyuehan/LLMBrain/11.25/reading_brain_datalad/ds003974'
+WORDS_BASE_DIR = '/data/home/jinyuehan/LLMBrain/12.03'
+GII_BASE_DIR = '/data/home/jinyuehan/LLMBrain/12.11/fmriprep'
+SAVE_DIR = '/data/home/jinyuehan/LLMBrain/12.11/fmri_vector'
 
 # 默认参数（保留group但无实际作用）
-DEFAULT_SUBJ = 'sub-01'    #受试者编号
-DEFAULT_GROUP = 'adult'    #路径中不再使用，可忽略
-DEFAULT_HEM = 'L'          #L代表左半脑，R代表右半脑
+DEFAULT_SUBJ = 'sub-20'    
+DEFAULT_GROUP = 'adult'    # 仅保留参数，路径中不再使用
+DEFAULT_HEM = 'L'          
+# ✅ 新增：批量处理的受试者范围（可自定义，示例为sub-01到sub-50）
+SUBJ_RANGE = range(1, 51)  # range(1,51) 对应sub-01到sub-51
 
 # ===================== 命令行参数解析 =====================
 def parse_args():
@@ -52,7 +54,7 @@ def process_vertex(v, events, surf, words, cums, words_list):
             tril_idx = np.tril_indices(words_list[sid], k=-1)
             event = event.reset_index(drop=True) 
             
-            # 核心：提取对应顶点v的BOLD值（原逻辑）
+            # 核心：提取对应顶点v的BOLD值（原逻辑完全保留）
             for ind, e in event.iterrows():
                 if ind < len(event)-1:
                     row = int(e.CURRENT_FIX_INTEREST_AREA_ID)-1
@@ -62,7 +64,7 @@ def process_vertex(v, events, surf, words, cums, words_list):
                         scan -= 1
                     fmri_snt[row, col] = surf[article-1][v, scan]  # 修正索引错误
             
-            # ✅ 关键修改：不再拆分train/test，直接合并到y_all
+            # ✅ 原始逻辑：不再拆分train/test，直接合并到y_all
             y_all.extend(fmri_snt[tril_idx[0], tril_idx[1]])
     
     y_all = np.array(y_all)
@@ -87,7 +89,7 @@ def process_bold_vector(subj, group, hem):
     events_lst = []
     for article in range(1, 6):
         run = 1
-        # ✅ 关键修改：去掉group，路径变为 EVENTS_BASE_DIR/subj/func/...
+        # ✅ 原始逻辑：去掉group，路径变为 EVENTS_BASE_DIR/subj/func/...
         events_path = os.path.join(EVENTS_BASE_DIR, subj, 'func', 
                                   f'{subj}_task-read_run-{run}_events.tsv')
         events = pd.read_csv(events_path, delimiter='\t')
@@ -145,7 +147,25 @@ def process_bold_vector(subj, group, hem):
     
     return y_all_all
 
-# ===================== 执行入口 =====================
+# ===================== 执行入口（新增外层循环） =====================
 if __name__ == '__main__':
-    subj, group, hem = parse_args()
-    process_bold_vector(subj, group, hem)
+    # 解析命令行参数（保留原逻辑，兼容单个受试者处理）
+    input_subj, input_group, input_hem = parse_args()
+    
+    # ✅ 新增：批量处理逻辑（优先处理命令行传参，无传参则处理SUBJ_RANGE）
+    if input_subj == DEFAULT_SUBJ:
+        # 无命令行传参时，批量处理SUBJ_RANGE（sub-01到sub-50）
+        print(f"开始批量处理（半球：{input_hem}）")
+        for subj_num in SUBJ_RANGE:
+            # 构造标准化的受试者ID（sub-01而非sub-1）
+            batch_subj = f'sub-{subj_num:02d}'
+            try:
+                process_bold_vector(batch_subj, input_group, input_hem)
+                print(f"✅ 完成处理：{batch_subj}")
+            except Exception as e:
+                print(f"❌ 处理{batch_subj}失败：{str(e)}")
+                continue  # 单个受试者失败不中断批量处理
+        print("📌 批量处理完成！")
+    else:
+        # 有命令行传参时，处理单个受试者（保留原逻辑）
+        process_bold_vector(input_subj, input_group, input_hem)
