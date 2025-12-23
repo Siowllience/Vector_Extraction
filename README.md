@@ -71,7 +71,7 @@ modelscope login yourtoken #替换为你的访问令牌
 随后执行文件夹下的代码即可下载，使用前注意修改下载路径。
 
 ## 提取模型注意力矩阵
-参考`reference/reading_brain_attention.py`脚本，编写了各个模型的注意力矩阵提取脚本，保存于`extract_attention_metrix/`文件夹下。设置好模型路径、注意力矩阵输出路径后，执行脚本即可。
+参考`reference/reading_brain_attention.py`脚本，编写了各个模型的注意力矩阵提取脚本，保存于`extract_attention_metrix/`文件夹下。设置好模型路径、阅读文本`reading_brain_sentences.txt`路径、注意力矩阵输出路径后，执行脚本即可。
 
 ## 提取模型注意力向量
 参考`reference/heads_vs_fmri.py`脚本，编写了提取注意力向量的脚本。在设置好注意力矩阵输入路径、`words_list.p`路径、向量输出路径后，执行：
