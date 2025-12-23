@@ -1,27 +1,4 @@
-论文[Increasing alignment of large language models with language processing in the human brain](https://www.nature.com/articles/s43588-025-00863-0)的眼动向量和fMRI向量提取代码。
-
-# words.csv和words_list.p的构建
-
-所述两个文件记录了句子id和句子词数的索引，用于构建初始眼动矩阵和fMRI矩阵，对后续处理眼动向量和fMRI向量至关重要。但原论文未给出相关文件，需要从原数据集的`text_data.xlsx`文件中提取（参考原论文提供的相关代码`reference/heads_vs_fmri.py`以及`reference/heads_vs_saccade.py`总结得出）。
-
-设置好`textdata_to_words.py`的输入输出路径后执行：
-```python
-python textdata_to_words.py
-```
-（处理好的文件已给出，可以不用重复处理）
-
-除此之外，所述两个文件决定了最后提取向量的维度。维度计算公式为：
-
-$$
-\text{总维度} = \sum_{i=1}^{K} \frac{n_i \times (n_i - 1)}{2} 
-$$
-
-变量说明：
-- $K$：实验刺激的总句子数（论文中 $K=148$，包含133个训练句+15个测试句）；
-- $n_i$：第i个句子的单词数量（论文中单个句子平均单词数为 $10.33$）；
-- $\frac{n_i \times (n_i - 1)}{2}$：单个句子对应的 $n_i \times n_i$ 注意力矩阵/眼动矩阵/ fMRI矩阵中，**下三角部分（不含对角线）的元素个数**（即右到左的回归型眼动或注意力关联的有效计算单元）。
-
-然而，现在提取出的向量维度为7421维，与原论文提到的7388维不符，需要检查`textdata_to_words.py`的处理逻辑是否有问题，是否导致每个句子单词数量的变化，从而影响到了维度。
+论文[Increasing alignment of large language models with language processing in the human brain](https://www.nature.com/articles/s43588-025-00863-0)的眼动向量、fMRI向量以及大模型注意力向量的提取代码。
 
 
 # 眼动向量提取
@@ -74,4 +51,63 @@ docker run --rm -it \
 python fMRIVector_Extraction.py
 ```
 
-即可提取特定受试者的fMRI向量，默认保存到`fmriVector/`文件夹中。该脚本参考原论文代码`reference/heads_vs_saccade.py`。
+即可提取特定受试者的fMRI向量，默认保存到`fmriVector/`文件夹中。该脚本参考原论文代码`reference/heads_vs_fmri.py`。
+
+# 大模型注意力向量提取
+
+## 下载模型
+`download_LLM/`文件夹下记录了所有模型下载的脚本，这些脚本都采用[ModelScope](https://www.modelscope.cn/)下载。配置下载环境：
+
+```python
+pip install modelscope
+```
+
+登录你的modelscope账号：
+
+```python
+modelscope login yourtoken #替换为你的访问令牌
+```
+
+随后执行文件夹下的代码即可下载，使用前注意修改下载路径。
+
+## 提取模型注意力矩阵
+参考`reference/reading_brain_attention.py`脚本，编写了各个模型的注意力矩阵提取脚本，保存于`extract_attention_metrix/`文件夹下。设置好模型路径、注意力矩阵输出路径后，执行脚本即可。
+
+## 提取模型注意力向量
+参考`reference/heads_vs_fmri.py`脚本，编写了提取注意力向量的脚本。在设置好注意力矩阵输入路径、`words_list.p`路径、向量输出路径后，执行：
+```python
+python LLMVector_Extraction.py
+```
+
+# words.csv和words_list.p的构建
+
+所述两个文件记录了句子id和句子词数的索引，用于构建初始眼动矩阵和fMRI矩阵，对后续处理眼动向量和fMRI向量至关重要。但原论文未给出相关文件，需要从原数据集的`text_data.xlsx`文件中提取（参考原论文提供的相关代码`reference/heads_vs_fmri.py`以及`reference/heads_vs_saccade.py`总结得出）。
+
+设置好`textdata_to_words.py`的输入输出路径后执行：
+```python
+python textdata_to_words.py
+```
+（处理好的文件已给出，可以不用重复处理）
+
+除此之外，所述两个文件决定了最后提取向量的维度。维度计算公式为：
+
+$$
+\text{总维度} = \sum_{i=1}^{K} \frac{n_i \times (n_i - 1)}{2} 
+$$
+
+变量说明：
+- $K$：实验刺激的总句子数（论文中 $K=148$，包含133个训练句+15个测试句）；
+- $n_i$：第i个句子的单词数量（论文中单个句子平均单词数为 $10.33$）；
+- $\frac{n_i \times (n_i - 1)}{2}$：单个句子对应的 $n_i \times n_i$ 注意力矩阵/眼动矩阵/ fMRI矩阵中，**下三角部分（不含对角线）的元素个数**（即右到左的回归型眼动或注意力关联的有效计算单元）。
+
+然而，现在提取出的向量维度为7421维，与原论文提到的7388维不符，需要检查`textdata_to_words.py`的处理逻辑是否有问题，是否导致每个句子单词数量的变化，从而影响到了维度。
+
+# reading_brain_sentences.txt的构建
+
+所述文件记录了五篇文章的纯文本内容，用于提供给大模型阅读进而获取所需注意力矩阵（参考原文代码`reference/reading_brain_attention.py`）。为了确保一致性，直接采用已经处理好的words.csv文件获取该文本文件，在设置好文件路径后，执行：
+
+```python
+python textdata_to_sentences.py
+```
+
+（处理好的文件已给出，可以不用重复处理）
